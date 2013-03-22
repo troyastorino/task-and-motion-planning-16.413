@@ -1,0 +1,71 @@
+\documentclass{article}
+
+\title{Advanced Lecture Proposal \\ 8.834/16.412}
+\author{Neil Forrester \and Troy Astorino}
+
+
+\begin{document}
+
+\maketitle
+
+
+\section{Abstract}
+A primary task of modern robots is manipulating objects in their environment. A
+prerequisite for manipulating something is knowing where it is. When most robots
+look for things, their activities are limited to moving themselves, and
+observing their environment with cameras (or other sensors). When people look
+for things though, they open drawers, turn over rocks, and generally manipulate
+their environment to facilitate their search. We discuss new research in how
+robots can perform some of these same activities. In particular we focus on the
+two tasks of deciding the probability that certain spaces contain certain
+objects (based on how often objects occur together, and what objects will fit in
+the space), and on deciding what order spaces should be searched in to maximize
+the probability of finding desired objects as quickly as possible.
+
+\section{Rough Outline}
+\begin{enumerate}
+\item Overview
+\begin{enumerate}
+\item Robotic object search has been limited to active visual search
+\item Manipulation-based search requires an emphasis on planning as manipulation by
+mobile robots is still error-prone and expensive
+\item Observed information can inform a search
+\begin{enumerate}
+\item co-occurrence of objects
+\item geometric information (which objects could fit into a given space)
+\end{enumerate}
+\item Background research
+\begin{enumerate}
+\item Assumed functionality 
+\begin{enumerate}
+\item Execution of actions once they have been planned
+\item Object recognition/computer vision
+\end{enumerate}
+\item Active visual search - list of papers
+\end{enumerate}
+\item Search planning
+\item Co-occurrence based belief updates
+\item Geometric constraint based belief updates
+\item Results of paper
+\item Future Directions - brief intro to generalized framework for integrated robot task and
+motion planning
+\end{enumerate}
+\end{enumerate}
+
+\section{Division of Labor}
+We’ll both work on all the slides (division of labor in the preparation stage
+will be somewhat ad-hoc, according to time, ability, knowledge, etc). On
+presentation day the current plan is that Neil Forrester will present the first
+half (up through approximately part 4), and Troy Astorino will present the
+second half (part 5 and onward). This is subject to change, of course, and
+either of us may pop in to answer audience questions as appropriate.
+
+\section{References}
+\begin{itemize}
+\item Wong, Lawson LS, Leslie Pack Kaelbling, and Tomás LozanoPérez. "Manipulation-based Active Search for Occluded Objects."
+\item Kaelbling, Leslie Pack, and Tomas Lozano-Perez. "Integrated robot task and motion planning in belief space."
+\item T. Kollar and N. Roy. “Utilizing object-object and object-scene context when planning to find things.”
+\item L. P. Kaelbling and T. Lozano-Perez. “Unifying perception, estimation and action for mobile manipulation via belief space planning.”
+\item Jean-Claude Latombe. “Motion Planning With Uncertainty: The Preimage Backchaining Approach”
+\end{itemize}
+\end{document}
