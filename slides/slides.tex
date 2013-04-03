@@ -14,27 +14,54 @@
 %\setbeamercolor{section number projected}[bg=black, fg=red]
 \setbeamertemplate{navigation symbols}{} % remove navigation symbols
 
+\DeclareMathOperator*{\argmax}{arg\,min}
+
 \begin{document}
 
 \begin{frame}
-	\maketitle
+  \maketitle
 \end{frame}
 
 \begin{frame}
-	\frametitle{Outline}
-	\tableofcontents
+  \frametitle{Outline}
+  \tableofcontents
 \end{frame}
 
 \section{section title}
 \begin{frame}
-	\frametitle{Why do we need manipulation-based search for occluded
-          objects?}
-        \begin{figure}
-          \centering
-          \includegraphics[width=3.2in]{img/robot_in_kitchen.jpg}
+  \frametitle{Why do we need manipulation-based search for occluded
+    objects?}
+  \begin{figure}
+    \centering
+    \includegraphics[width=3.2in]{img/robot_in_kitchen.jpg}
 
-          \tiny{Original image courtesy of Wendy Rogers/Georgia Tech}
-        \end{figure}
+    \tiny{Original image courtesy of Wendy Rogers/Georgia Tech}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Assumptions for the following treatment}
+  \begin{itemize}
+  \item No errors in  visual identification and classification of objects
+  \item Robot can successfully complete any movement and manipulation task, but
+    these are temporally expensive
+  \item Finite set of object types in the world
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Search planning}
+  A robot searching for an object of type $t_i$ next removes an occluding object
+  from the maximum likelihood container:
+
+  \[\argmax_k{\theta_i^k|\{t_{o_j}\}}\]
+  
+  \begin{itemize}
+  \item $k$ indexes over the containers.
+  \item $\theta_i^k$ is the probability of finding an object of type $t_i$ in
+    container $k$
+  \item $\{t_{o_j}\}$ is the set of observed objects
+  \end{itemize}
 \end{frame}
 
 \end{document}
