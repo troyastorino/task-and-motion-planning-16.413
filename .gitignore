@@ -1,3 +1,9 @@
 # latex output files
 auto
 *.log
+*.aux
+*.pdf
+*.nav
+*.toc
+*.out
+*.snm
