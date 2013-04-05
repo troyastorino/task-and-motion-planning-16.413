@@ -7,6 +7,7 @@
 \institute[6.834 -- MIT]{Cognitive Robotics \\ Massachusetts Institute of Technology}
 
 \usepackage{graphicx}
+\usepackage{amsmath}
 
 \usetheme{CambridgeUS}
 \usecolortheme{beaver}
@@ -20,10 +21,13 @@
 % \norm{n}{stuff} is the L-n norm of stuff
 \providecommand{\norm}[2]{\lVert#2\rVert_#1}
 
+\newcommand{\overlay}[3]{\includegraphics<#3>[scale=#2]{img/#1.png}}
+\newcommand{\overlayL}[2]{\overlay{#1}{0.5}{#2}}
+
 % macros for including shape pictures at various scales (Large, Medium, Small)
-\def \spL [#1]{\includegraphics[scale=0.5]{img/#1.png}}
-\def \spM [#1]{\includegraphics[scale=0.3]{img/#1.png}}
-\def \spS [#1]{\includegraphics[scale=0.15]{img/#1.png}}
+\def \spL [#1]{\overlayL{#1}{1}}
+\def \spM [#1]{\overlay{#1}{0.3}{1}}
+\def \spS [#1]{\overlay{#1}{0.15}{1}}
 
 \begin{document}
 
@@ -60,15 +64,13 @@
 
 \begin{frame}
   \frametitle{Search planning}
-  A robot searching for an object of type $t_i$ next removes an occluding object
+  A robot searching for an object $q$ next removes an occluding object
   from the maximum likelihood container:
 
-  \[\argmax_k{\theta_i^k|\{t_{o_j}\}}\]
+  \[\argmax_l{\mathbb{P}(q \in c_l|\{t_{o_j}\})}\]
   
   \begin{itemize}
-  \item $k$ indexes over the containers.
-  \item $\theta_i^k$ is the probability of finding an object of type $t_i$ in
-    container $k$
+  \item $c_l$ is the $l^{\text{th}}$ container
   \item $\{t_{o_j}\}$ is the set of observed objects
   \end{itemize}
 \end{frame}
@@ -128,6 +130,72 @@
     \end{column}
     \begin{column}{0.3\textwidth}
       \spL[1-observed-container]
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Packing a container}
+\begin{center}
+Want to calculate $\mathbb{P}(q \in c_l|\{t_{o_j}\})$ from samples of $\theta$
+
+\[\theta\_samples = \left[ \left( 0.4, 0.2, 0.1, 0.3 \right),
+                         \left( 0.2, 0.1, 0.3, 0.4 \right) \right]\]
+
+\end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Packing a container}
+  \begin{columns}
+    \begin{column}{0.7\textwidth}
+      \begin{center}
+        \vspace{-3em}
+
+        \begin{align*}
+          &\begin{aligned}
+            \theta\_samples = [ & \left( 0.4, 0.2, 0.1, 0.3 \right), \\
+            & \left( 0.2, 0.1, 0.3, 0.4 \right) ]
+          \end{aligned} \\
+          &\invisible<1,17>{i = \alt<1-8>{0}{\alert<9>1} \; \longrightarrow \; 
+            \theta = \alt<1-8>{\left( 0.4, 0.2, 0.1, 0.3 \right)}
+            {\alert<9>{\left( 0.2, 0.1, 0.3, 0.4 \right)}}}\\
+          &count = \alt<1-7>{0}{\alert<8>{1}}, \; total = \temporal<8-16>{0}{\alert<8>1}{\alert<17>2}\\
+        \end{align*}
+
+      \item<2-6,10-15>{Shape sampled from $\theta$: \phantom{\hspace{5em}}}\\
+      \overlayL{green-rectangle}{2}
+      \overlayL{red-square}{3}
+      \overlayL{blue-circle}{4}
+      \overlayL{red-square}{5}
+      \overlayL{green-rectangle}{6}
+      \overlayL{red-square}{10}
+      \overlayL{green-rectangle}{11}
+      \overlayL{orange-triangle}{12}
+      \overlayL{orange-triangle}{13}
+      \overlayL{red-square}{14}
+      \overlayL{orange-triangle}{15}
+
+      \item<17>$\mathbb{P}(q \in c_l|\{t_{o_j}\}) = \frac12$
+
+      \end{center}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \overlayL{container-packing-1-1}{1-2}
+      \overlayL{container-packing-1-2}{3}
+      \overlayL{container-packing-1-3}{4}
+      \overlayL{container-packing-1-4}{5}
+      \overlayL{container-packing-1-5}{6}
+      \overlayL{container-packing-1-6}{7-8}
+      \overlayL{container-packing-2-1}{9-10}
+      \overlayL{container-packing-2-2}{11}
+      \overlayL{container-packing-2-3}{12}
+      \overlayL{container-packing-2-4}{13}
+      \overlayL{container-packing-2-5}{14}
+      \overlayL{container-packing-2-6}{15}
+      \overlayL{container-packing-2-7}{16-17}
     \end{column}
   \end{columns}
 \end{frame}
