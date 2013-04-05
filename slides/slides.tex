@@ -23,10 +23,11 @@
 
 \newcommand{\overlay}[3]{\includegraphics<#3>[scale=#2]{img/#1.png}}
 \newcommand{\overlayL}[2]{\overlay{#1}{0.5}{#2}}
+\newcommand{\overlayM}[2]{\overlay{#1}{0.3}{#2}}
 
 % macros for including shape pictures at various scales (Large, Medium, Small)
 \def \spL [#1]{\overlayL{#1}{1}}
-\def \spM [#1]{\overlay{#1}{0.3}{1}}
+\def \spM [#1]{\overlayM{#1}{1}}
 \def \spS [#1]{\overlay{#1}{0.15}{1}}
 
 % uncomment this with your current latex file to only compile it
@@ -45,7 +46,6 @@
 \section{Introduction}
 \include{intro}
 
-
 \section{Generative Model of Container Contents}
 \subsection{Co-occurrences}
 \include{composition}
@@ -58,13 +58,7 @@
 \include{packing}
 
 \section{Search planning}
-\begin{frame}
-  \frametitle{Search planning}
-  A robot searching for an object $q$ next removes an occluding object
-  from the maximum likelihood container:
-
-  \[\argmax_l{\mathbb{P}(q \in c_l|\{t_{o_j}\})}\]
-\end{frame}
+\include{search}
 
 \section{Metropolis-Hastings Algorithm}
 \include{mcmc}
