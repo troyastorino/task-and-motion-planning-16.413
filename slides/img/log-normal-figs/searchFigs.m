@@ -1,8 +1,8 @@
-state = genSigmaInit(3);
+state = genParamsInit(3);
 lambda = 1
 
-Sigma = genSigma(state, 0);
-[SigmaNew, stateNew] = genSigma(state, lambda);
+Sigma = genParams(state, 0);
+[SigmaNew, stateNew] = genParams(state, lambda);
 for i = 1:1000
 	figure(1)
 	draw3(Sigma)
@@ -10,7 +10,7 @@ for i = 1:1000
 	draw3(SigmaNew)
 	k = getkey()
 	if (k == 49)
-		[SigmaNew, stateNew] = genSigma(state, lambda);
+		[SigmaNew, stateNew] = genParams(state, lambda);
 	else
 		delta = stateNew - state;
 
@@ -18,6 +18,6 @@ for i = 1:1000
 		state = stateNew;
 
 		stateNew = state + delta;
-		SigmaNew = genSigma(stateNew, 0);
+		SigmaNew = genParams(stateNew, 0);
 	end
 end
