@@ -1,6 +1,4 @@
-function draw3(Sigma3)
-	mu3 = [0 0 0];
-
+function draw3(mu3, Sigma3)
 	eta3 = mvnrnd(mu3, Sigma3, 50000);
 	theta3 = zeros(size(eta3));
 	for i = 1:length(eta3)
@@ -9,11 +7,14 @@ function draw3(Sigma3)
 		theta3(i,3) = exp(eta3(i,3)) / (exp(eta3(i,1)) + exp(eta3(i,2)) + exp(eta3(i,3)));
 	end
 
-	%figure(1)
-	n = 50000;
-	%plot3(  eta3(1:n,1),   eta3(1:n,2),   eta3(1:n,3), '.', 'MarkerSize', 0.5)
-	%axis equal
-	%figure(2)
-	plot3(theta3(1:n,1), theta3(1:n,2), theta3(1:n,3), '.', 'MarkerSize', 0.5)
+	figure(4)
+	plot3(  eta3(1:5000,1),   eta3(1:5000,2),   eta3(1:5000,3), '+')
+	axis equal
+	figure(5)
+	plot3(theta3(1:5000,1), theta3(1:5000,2), theta3(1:5000,3), '+')
 	axis equal
 	view([130 30])
+
+	figure(6)
+	surf(hist2(theta3(:,1:2), 100))
+	shading interp

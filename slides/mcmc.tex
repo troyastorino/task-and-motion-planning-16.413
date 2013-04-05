@@ -1,13 +1,30 @@
-\section{Markov chain Monte Carlo}
+\section{Metropolis-Hastings Algorithm}
 
 \begin{frame}
   \frametitle{Metropolis-Hastings Algorithm}
   \begin{center}
-    Draws samples from any probability distribution, as long as a function
-    proportional to the probability distribution is known
+    Draws samples from any probability distribution $P(x)$, as long as a
+    function $f(x)$ proportional to the probability distribution is known
     \vspace{4em}
 
-    Very useful in Bayesian inference for non-conjugate posteriors
+    Very useful in Bayesian inference for non-conjugate posteriors in
+    multi-dimensional vector spaces
     \[P(x|h) \propto P(h|x) P(x)\]
   \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Overview of Algorithm}
+  \begin{itemize}
+  \item Draws samples from $P(x)$ by taking a type of random walk about $f(x)$
+  \item Mimics shape of $P(x)$ by spending more time in the regions where $f(x)$
+    is larger
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Proposal Distribution}
+  \begin{itemize}
+  \item Distribution that determines the next potential sample
+  \end{itemize}
 \end{frame}
