@@ -1,4 +1,4 @@
-function hist2(data, nbins)
+function histogram = hist2(data, nbins)
 	xMin = min(data(:,1));
 	yMin = min(data(:,2));
 	xMax = max(data(:,1));
