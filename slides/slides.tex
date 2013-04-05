@@ -42,18 +42,22 @@
   \tableofcontents
 \end{frame}
 
+\section{Introduction}
 \include{intro}
 
 
 \section{Generative Model of Container Contents}
+\subsection{Co-occurrences}
 \include{composition}
 
 \include{prior}
 
 \include{posterior}
 
+\subsection{Spatial constraints}
 \include{packing}
 
+\section{Search planning}
 \begin{frame}
   \frametitle{Search planning}
   A robot searching for an object $q$ next removes an occluding object
@@ -62,6 +66,7 @@
   \[\argmax_l{\mathbb{P}(q \in c_l|\{t_{o_j}\})}\]
 \end{frame}
 
+\section{Metropolis-Hastings Algorithm}
 \include{mcmc}
 
 \end{document}

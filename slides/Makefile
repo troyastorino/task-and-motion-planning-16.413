@@ -6,4 +6,4 @@ slides.pdf: *.tex
 	pdflatex -halt-on-error slides.tex
 
 clean:
-	rm *.pdf *.toc *.aux *.log
+	rm -f *.pdf *.toc *.aux *.log *.nav *.out
