@@ -1,0 +1,25 @@
+\begin{frame}
+  \frametitle{Likelihood Function}
+  \begin{center}
+    \vspace{-2em}
+    \begin{align*}
+    P(t_i | \eta) &= P(t_i | \theta) \\ 
+    &\\
+    &= \theta_i \\ 
+    &\\
+    & = \frac{e^{\eta_i}}{\sum_{k=1}^{T}e^{\eta_k}}
+  \end{align*}
+
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Bayesian update}
+  \begin{center}
+    \begin{align*}
+      P(\eta | t_i) &\propto P(t_i | \eta) P(\eta)\\
+      &\\
+      &=\frac{e^{\eta_i}}{\sum_{k=1}^{T}e^{\eta_k}} \mathcal{N}(\eta ; \mu, \Sigma)
+    \end{align*}
+  \end{center}
+\end{frame}

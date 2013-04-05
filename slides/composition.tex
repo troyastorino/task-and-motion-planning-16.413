@@ -1,0 +1,57 @@
+\begin{frame}
+  \frametitle{The Problem}
+  \begin{center}
+    \vspace{-0.13in}
+    Set of containers: $\{c_l\}$
+
+    \spL[3-unknown-containers]
+
+    Set of object types: $\{t_i\}$
+
+    \spL[shape-universe-small]
+
+    We want to find an object of type $q$ (the query type).
+
+    \spL[blue-circle]
+
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Where is \spM[blue-circle]?}
+  \begin{center}
+    \spL[3-partially-observed-containers]
+
+    \vspace{0.3in}
+
+    Given that we have observed objects of types $\{t_{o_j}\}$ \\
+    in container $c$, what is $\mathrm{P}(q \in c \, | \, \{t_{o_j}\})$ ?
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Composition of a container ($\theta$)}
+  \begin{columns}
+    \begin{column}{0.7\textwidth}
+      \begin{center}
+        \spM[shape-universe-small]\\
+        \hspace{0.1in} 1 \hspace{0.2in} 2 \hspace{0.08in} 3 \hspace{0.08in} 4
+
+        \begin{equation*}
+          \theta' = (1, 2, 1, 3)
+        \end{equation*}
+
+        \begin{equation*}
+          \theta = \frac{\theta'}{\norm{1}{\theta'}}
+        \end{equation*}
+
+        \begin{equation*}
+          \theta = \Big ( \frac17, \frac27, \frac17, \frac37 \Big )
+        \end{equation*}
+      \end{center}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \spL[1-observed-container]
+    \end{column}
+  \end{columns}
+\end{frame}

@@ -30,7 +30,7 @@
 \def \spS [#1]{\overlay{#1}{0.15}{1}}
 
 % uncomment this with your current latex file to only compile it
-% \includeonly{mcmc}
+%\includeonly{packing}
 \begin{document}
 
 \begin{frame}
@@ -44,7 +44,13 @@
 
 \include{intro}
 
-\include{generative_model}
+
+\section{Generative Model of Container Contents}
+\include{composition}
+
+\include{prior}
+
+\include{posterior}
 
 \include{packing}
 
@@ -54,12 +60,8 @@
   from the maximum likelihood container:
 
   \[\argmax_l{\mathbb{P}(q \in c_l|\{t_{o_j}\})}\]
-  
-  \begin{itemize}
-  \item $c_l$ is the $l^{\text{th}}$ container
-  \item $\{t_{o_j}\}$ is the set of observed objects
-  \end{itemize}
 \end{frame}
 
 \include{mcmc}
+
 \end{document}

@@ -1,5 +1,27 @@
 \begin{frame}
-  \frametitle{}
+  \frametitle{Spatial constraints on container contents}
+  \begin{center}
+    The size of the unseen component of a container restricts what objects could be
+    inside it.
+    \vspace{3em}
+
+    Incorporate these spatial constraints to calculate 
+    $\mathbb{P}(q \in c_l|\{t_{o_j}\})$
+    from samples of $\theta$
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Generating samples of $\theta$}
+  \begin{center}
+    \vspace{-2em}
+      \[P(\eta | t_i) =\frac{e^{\eta_i}}{\sum_{k=1}^{T}e^{\eta_k}} \mathcal{N}(\eta ; \mu, \Sigma)\]
+    \vspace{1em}
+
+    Draw $H$, a list of samples of $\eta$, by Markov chain Monte Carlo
+
+    \[\Theta = \sigma \left(H \right)\]
+  \end{center}
 \end{frame}
 
 \begin{frame}
@@ -11,7 +33,7 @@
 
         \begin{align*}
           &\begin{aligned}
-            \theta\_samples = [ & \left( 0.4, 0.2, 0.1, 0.3 \right), \\
+            \Theta = [ & \left( 0.4, 0.2, 0.1, 0.3 \right), \\
             & \left( 0.2, 0.1, 0.3, 0.4 \right) ]
           \end{aligned} \\
           &\invisible<1,17>{i = \alt<1-8>{0}{\alert<9>1} \; \longrightarrow \; 
