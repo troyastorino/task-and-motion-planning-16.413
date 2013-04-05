@@ -190,13 +190,15 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Packing a container}
+\frametitle{Spacial constraints on container contents}
 \begin{center}
-Want to calculate $\mathbb{P}(q \in c_l|\{t_{o_j}\})$ from samples of $\theta$
+The size of the unseen component of a container restricts what objects could be
+inside it.
+\vspace{3em}
 
-\[\theta\_samples = \left[ \left( 0.4, 0.2, 0.1, 0.3 \right),
-                         \left( 0.2, 0.1, 0.3, 0.4 \right) \right]\]
-
+Incorporate these spacial constraints to calculate 
+$\mathbb{P}(q \in c_l|\{t_{o_j}\})$
+from samples of $\theta$
 \end{center}
 \end{frame}
 
@@ -253,4 +255,17 @@ Want to calculate $\mathbb{P}(q \in c_l|\{t_{o_j}\})$ from samples of $\theta$
   \end{columns}
 \end{frame}
 
+\section{Markov chain Monte Carlo}
+
+\begin{frame}
+  \frametitle{Metropolis-Hastings Algorithm}
+  \begin{center}
+    Draws samples from any probability distribution, as long as a function
+    proportional to the probability distribution is known
+    \vspace{4em}
+
+    Very useful in Bayesian inference for non-conjugate posteriors
+    \[P(x|h) \propto P(h|x) P(x)\]
+  \end{center}
+\end{frame}
 \end{document}
