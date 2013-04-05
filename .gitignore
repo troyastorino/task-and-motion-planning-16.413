@@ -7,3 +7,7 @@ auto
 *.toc
 *.out
 *.snm
+
+# vim backup files
+*.swp
+*.swf
