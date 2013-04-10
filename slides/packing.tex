@@ -5,9 +5,9 @@
     inside it.
     \vspace{3em}
 
-    Incorporate these spatial constraints to calculate 
+    We would like to incorporate these spatial constraints to calculate
     $\mathbb{P}(q \in c_l|\{t_{o_j}\})$
-    from samples of $\theta$
+    from samples of $\theta$.
   \end{center}
 \end{frame}
 
@@ -18,7 +18,8 @@
       \[P(\eta | t_i) =\frac{e^{\eta_i}}{\sum_{k=1}^{T}e^{\eta_k}} \mathcal{N}(\eta ; \mu, \Sigma)\]
     \vspace{1em}
 
-    Draw $H$, a list of samples of $\eta$, by Markov chain Monte Carlo
+    $H$, a list of samples, is drawn from $\eta$ by\\
+    a Markov chain Monte Carlo method.
 
     \[\Theta = \sigma \left(H \right)\]
   \end{center}

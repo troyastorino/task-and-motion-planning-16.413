@@ -1,18 +1,18 @@
 \begin{frame}
   \frametitle{Markov chain Monte Carlo}
-  Allows sampling from a probability distribution whose form is not explicitly
-  known.
+  Markov chain Monte Carlo methods allow sampling from a
+  probability distribution whose form is not explicitly known.
 \end{frame}
 
 \begin{frame}
   \frametitle{Metropolis-Hastings Algorithm}
   \begin{center}
-    Draws samples from any probability distribution $P(x)$, as long as a
-    function $f(x)$ proportional to the probability distribution is known
+    Metropolis-Hastings draws samples from any probability distribution $P(x)$, as long as a
+    function $f(x)$ proportional to the probability distribution is known.
     \vspace{4em}
 
-    Very useful in Bayesian inference for non-conjugate posteriors in
-    multi-dimensional vector spaces
+    This is very useful in Bayesian inference for non-conjugate posteriors
+    in multi-dimensional vector spaces.
     \[P(x|h) \propto P(h|x) P(x)\]
   \end{center}
 \end{frame}
@@ -20,19 +20,17 @@
 \begin{frame}
   \frametitle{Overview of Algorithm}
   \begin{itemize}
-  \item Draws samples from $P(x)$ by taking a type of random walk about $f(x)$
-  \item Mimics shape of $P(x)$ by spending more time in the regions where $f(x)$
-    is larger
+  \item We draw samples from $P(x)$ by taking a type of random walk about $f(x)$.
+  \item This mimics shape of $P(x)$ by spending more time in the regions where $f(x)$ is larger.
   \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Proposal Distribution}
   \begin{itemize}
-  \item Distribution that determines the next potential sample
-  \item Must be symmetric--typically Gaussian
-  \item Size of distribution crucial in determining if M-H will return a
-    representative sample
+  \item The proposal distribution that determines the next potential sample.
+  \item It must be symmetric -- typically Gaussian.
+  \item The size of the distribution crucial in determining if M-H will return a representative sample.
   \end{itemize}
 \end{frame}
 
