@@ -37,36 +37,42 @@
 \section{Introduction}
 \include{intro}
 
-\section{Probability Distributions in Robotics}
+\AtBeginSection[]
+{
+ \frametitle{Outline}
+ \tableofcontents[currentsection]
+}
+\section{Techniques for Probabilistic Reasoning}
+\subsection{Probability Distributions in Robotics}
 \include{probability-distributions}
 
-\section{Maximum Likelihood Estimation}
+\subsection{Maximum Likelihood Estimation}
 \include{ml}
 
-\section{Markov chain Monte Carlo}
+\subsection{Markov chain Monte Carlo}
 \include{mcmc}
 
 \section{Manipulation-based Search for Occluded Objects}
 \include{search-intro}
 
-\section{Generative Model of Container Contents}
-\subsection{Co-occurrences}
+\subsection{Generative Model of Container Contents}
+\subsubsection*{Co-occurrences}
 \include{composition}
 
 \include{prior}
 
 \include{posterior}
 
-\subsection{Spatial constraints}
+\subsubsection*{Spatial constraints}
 \include{packing}
 
-\section{Search planning}
+\subsection{Search planning}
 \include{search}
 
-\section{Results}
+\subsection{Results}
 \include{results}
 
-\section{Applications}
+\subsection{Applications}
 \include{applications}
 
 \section{Conclusion}
