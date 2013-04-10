@@ -7,6 +7,8 @@ auto
 *.toc
 *.out
 *.snm
+*.bbl
+*.blg
 
 # vim backup files
 *.swp
